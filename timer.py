@@ -10,9 +10,9 @@ class TimerApp:
         self.root = root
         self.root.title("Countdown Timer")
 
-        self.hours_var = tk.StringVar(value="0")
-        self.minutes_var = tk.StringVar(value="0")
-        self.seconds_var = tk.StringVar(value="0")
+        self.hours_var = tk.StringVar(value="00")
+        self.minutes_var = tk.StringVar(value="00")
+        self.seconds_var = tk.StringVar(value="00")
         vcmd = (root.register(self.limit_size), '%P')
 
         self.hours_entry = tk.Entry(root, textvariable=self.hours_var, font=("Arial", 48), width=2, justify='center', bg='white', fg='black', validate='key', validatecommand=vcmd)
@@ -44,7 +44,7 @@ class TimerApp:
 
     def clear_default(self, event):
         entry = event.widget
-        if entry.get() == "0":
+        if entry.get() == "00":
             entry.delete(0, tk.END)
 
     def limit_size(self, P):
@@ -93,9 +93,9 @@ class TimerApp:
         self.hours_entry.unbind("<FocusIn>")
         self.minutes_entry.unbind("<FocusIn>")
         self.seconds_entry.unbind("<FocusIn>")
-        self.hours_var.set("0")
-        self.minutes_var.set("0")
-        self.seconds_var.set("0")
+        self.hours_var.set("00")
+        self.minutes_var.set("00")
+        self.seconds_var.set("00")
 
         self.hours_entry.bind("<FocusIn>", self.clear_default)
         self.minutes_entry.bind("<FocusIn>", self.clear_default)
