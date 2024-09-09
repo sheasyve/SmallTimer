@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
+import os
 import tkinter as tk
 from tkinter import messagebox
+import pygame
+pygame.mixer.init()
 
 class TimerApp:
     def __init__(self, root):
@@ -32,7 +35,9 @@ class TimerApp:
                 self.root.after(1000, self.update_timer)
             else:
                 self.running = False
-                messagebox.showinfo("Time's up.")
+                sound = pygame.mixer.Sound('sounds/end.wav')#Play annoying noise.
+                sound.play()
+                self.root.after(100, lambda: messagebox.showinfo("Time's up."))
                 #Switch display to input
                 self.time_label.pack_forget()
                 self.time_entry.pack()
