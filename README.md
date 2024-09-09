@@ -11,6 +11,6 @@ This is a simple countdown timer built with Python and Tkinter.
 1. Run the `Timer.exe` file.
 
 ## How to Use
-1. Enter the time
+1. Enter the countdown time
 2. Click Start
 3. Click Restart
