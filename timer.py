@@ -66,3 +66,5 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = TimerApp(root)
     root.mainloop()
+#Icon source 
+#Clock by NicholasJudy456 - uploaded on October 13, 2016, 10:20 pm https://openclipart.org/detail/263940/clock#google_vignette
