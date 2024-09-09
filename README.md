@@ -1,4 +1,4 @@
-# Simple Countdown Timer for Windows and Linux.
+# Simple Countdown Timer for Linux and Windows.
 
 This is a simple countdown timer built with Python and Tkinter.
 
