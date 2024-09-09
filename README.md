@@ -9,3 +9,8 @@ This is a simple countdown timer built with Python and Tkinter.
 
 ### On Windows
 1. Run the `Timer.exe` file.
+
+## How to Run
+1. Enter the time in HH:MM:SS format
+2. Click Start
+3. Click Restart and repeat step 1 and 2.
