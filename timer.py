@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+#Shea Syverson 2024
 import os
 import tkinter as tk
 from tkinter import messagebox
@@ -33,11 +34,10 @@ class TimerApp:
         self.seconds_entry.pack(side='left')
         self.seconds_entry.bind("<FocusIn>", self.clear_default)
 
-        self.start_button = tk.Button(root, text="Start", command=self.start_timer, font=("Arial", 14))
-        self.start_button.pack(side="left")
-
         self.reset_button = tk.Button(root, text="Reset", command=self.reset_timer, font=("Arial", 14))
         self.reset_button.pack(side="right")
+        self.start_button = tk.Button(root, text="Start", command=self.start_timer, font=("Arial", 14))
+        self.start_button.pack(side="right")
 
         self.time_in_seconds = 0
         self.running = False
@@ -124,6 +124,6 @@ if __name__ == "__main__":
     root = tk.Tk()
     app = TimerApp(root)
     root.mainloop()
-
+#pyinstaller --onefile --noconsole --add-data "icon.png;." timer.py
 #Icon source 
 #Clock by NicholasJudy456 - uploaded on October 13, 2016, 10:20 pm https://openclipart.org/detail/263940/clock#google_vignette
