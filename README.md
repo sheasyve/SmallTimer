@@ -1,3 +1,11 @@
-Simple Countdown for Linux and Windows built with Python and Tkinter.
-To run on Linux: Run the Timer File
-To run on Windows: Run the Timer.exe File
+# Simple Countdown Timer for Linux and Windows
+
+This is a simple countdown timer built with Python and Tkinter.
+
+## How to Run
+
+### On Linux
+1. Run the `Timer` file.
+
+### On Windows
+1. Run the `Timer.exe` file.
