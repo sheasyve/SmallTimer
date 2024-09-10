@@ -83,7 +83,6 @@ class TimerApp:
                 self.sound_channel = pygame.mixer.Channel(0)
                 self.sound_channel.play(self.sound, loops=-1)
                 self.root.after(100, lambda: messagebox.showinfo("Time's up."))
-                self.sound_channel.stop()
                 # Switch back to entry fields
                 self.time_label.pack_forget()
                 self.pack_time_entries()
