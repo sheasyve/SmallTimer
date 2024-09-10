@@ -22,7 +22,7 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
    pip install pyinstaller
    ```
 
-2. Run the following command in the SmallTimer Folder:
+2. Run the following commands in the SmallTimer Folder:
 
    **For Linux:**
    ```bash
@@ -31,6 +31,6 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
 
    **For Windows:**
    ```bash
-     pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" timer.py
-
+      pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" timer.py
+      chmod +x SmallTimer
    ```
