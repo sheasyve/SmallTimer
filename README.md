@@ -22,7 +22,7 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
    pip install pyinstaller
    ```
 
-2. Run the following command in the `src` folder:
+2. Run the following command in the SmallTimer Folder:
 
    **For Linux:**
    ```bash
