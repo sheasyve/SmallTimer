@@ -1,8 +1,8 @@
 # Minimalist Countdown Timer for Linux and Windows.
 
 This is a minimal countdown timer built with Python and Tkinter.
-Comes with excecutables for windows and linux.
 It counts down to zero from the target value and delivers an alert.
+Excecutable files for Linux and Windows supplied in Release.
 
 ## How to Run
 
