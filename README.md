@@ -5,10 +5,11 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
 ## How to Run
 
 ### On Linux
-1. Run the `Timer` file.
+1. Run ```bash chmod +x SmallTimer ```
+1. Run the `SmallTimer` file.
 
 ### On Windows
-1. Run the `Timer.exe` file.
+1. Run the `SmallTimer.exe` file.
 
 ## How to Use
 1. Enter the countdown time.
@@ -22,15 +23,14 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
    pip install pyinstaller
    ```
 
-2. Run the following command in the SmallTimer Folder:
+2. Run the following commands in the SmallTimer Folder:
 
    **For Linux:**
    ```bash
-      pyinstaller --onefile --noconsole --add-data "img/icon.ico:img" --add-data "sounds/end.wav:sounds" timer.py
+      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" timer.py
    ```
 
    **For Windows:**
    ```bash
-     pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" timer.py
-
+      pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" timer.py
    ```
