@@ -26,10 +26,11 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
 
    **For Linux:**
    ```bash
-   pyinstaller --onefile --noconsole --add-data "../img/icon.ico:." --add-data "../sounds/end.wav:sounds" timer.py
+      pyinstaller --onefile --noconsole --add-data "img/icon.ico:img" --add-data "sounds/end.wav:sounds" timer.py
    ```
 
    **For Windows:**
    ```bash
-   pyinstaller --onefile --noconsole --add-data "../img/icon.ico;." --add-data "../sounds/end.wav;sounds" timer.py
+     pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" timer.py
+
    ```
