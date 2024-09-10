@@ -132,7 +132,6 @@ class TimerApp:
         if hasattr(self, 'time_label'):
             self.time_label.pack_forget()
             self.pack_time_entries()
-        messagebox.showinfo("Timer Reset", "Timer has been reset.")
 
     def pack_time_entries(self):
         self.hours_entry.pack(side='left')
