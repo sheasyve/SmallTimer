@@ -17,6 +17,9 @@ This is a minimal countdown timer built with Python and Tkinter. It counts down 
 3. Click **Restart**.
 
 ## How to Compile Executables
+### Dependencies
+-   pip install ttkthemes
+-   pip install pygame
 
 1. Install PyInstaller:
    ```bash
