@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-#Shea Syverson 2024
+# Shea Syverson 2024
 import os
 import tkinter as tk
 from tkinter import messagebox
@@ -8,11 +8,19 @@ pygame.mixer.init()
 import sys
 import platform
 import tkinter.simpledialog as simpledialog
+from ttkthemes import ThemedTk
+from tkinter import ttk
 
 class TimerApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Countdown Timer")
+
+        # Create a Style object
+        self.style = ttk.Style()
+
+        # Configure a style for ttk.Button
+        self.style.configure('TButton', font=('Arial', 14))
 
         if platform.system() == "Windows":
             self.icon_path = self.resource_path("img/icon.ico")
@@ -27,28 +35,29 @@ class TimerApp:
         self.seconds_var = tk.StringVar(value="00")
         vcmd = (root.register(self.limit_size), '%P')
 
-        self.hours_entry = tk.Entry(root, textvariable=self.hours_var, font=("Arial", 48), width=2, justify='center', bg='white', fg='black', validate='key', validatecommand=vcmd)
+        self.hours_entry = ttk.Entry(root, textvariable=self.hours_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
         self.hours_entry.pack(side='left')
         self.hours_entry.bind("<FocusIn>", self.clear_default)
 
-        self.colon1 = tk.Label(root, text=":", font=("Arial", 48))
+        self.colon1 = ttk.Label(root, text=":", font=("Arial", 48))
         self.colon1.pack(side='left')
 
-        self.minutes_entry = tk.Entry(root, textvariable=self.minutes_var, font=("Arial", 48), width=2, justify='center', bg='white', fg='black', validate='key', validatecommand=vcmd)
+        self.minutes_entry = ttk.Entry(root, textvariable=self.minutes_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
         self.minutes_entry.pack(side='left')
         self.minutes_entry.bind("<FocusIn>", self.clear_default)
 
-        self.colon2 = tk.Label(root, text=":", font=("Arial", 48))
+        self.colon2 = ttk.Label(root, text=":", font=("Arial", 48))
         self.colon2.pack(side='left')
 
-        self.seconds_entry = tk.Entry(root, textvariable=self.seconds_var, font=("Arial", 48), width=2, justify='center', bg='white', fg='black', validate='key', validatecommand=vcmd)
+        self.seconds_entry = ttk.Entry(root, textvariable=self.seconds_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
         self.seconds_entry.pack(side='left')
         self.seconds_entry.bind("<FocusIn>", self.clear_default)
 
-        self.reset_button = tk.Button(root, text="Reset", command=self.reset_timer, font=("Arial", 14))
-        self.reset_button.pack(side="right")
-        self.start_button = tk.Button(root, text="Start", command=self.start_timer, font=("Arial", 14))
-        self.start_button.pack(side="right")
+        self.reset_button = ttk.Button(root, text="Reset", command=self.reset_timer)
+        self.start_button = ttk.Button(root, text="Start", command=self.start_timer)
+        self.reset_button.pack(side="right", fill="y", expand=True)
+        self.start_button.pack(side="right",fill="y", expand=True)
+        
         self.sound = pygame.mixer.Sound(self.resource_path('sounds/end.wav'))
         self.time_in_seconds = 0
         self.running = False
@@ -90,11 +99,10 @@ class TimerApp:
                 self.sound_channel = pygame.mixer.Channel(0)
                 self.sound_channel.play(self.sound, loops=-1)
                 self.show_notification()
-                
+
                 # Switch back to entry fields
                 self.time_label.pack_forget()
                 self.pack_time_entries()
-
 
     def start_timer(self):
         if not self.running:
@@ -105,7 +113,7 @@ class TimerApp:
                 self.time_in_seconds = hours * 3600 + minutes * 60 + seconds
                 if self.time_in_seconds > 0:
                     self.unpack_time_entries()
-                    self.time_label = tk.Label(self.root, text=f"{hours:02}:{minutes:02}:{seconds:02}", font=("Arial", 48))
+                    self.time_label = ttk.Label(self.root, text=f"{hours:02}:{minutes:02}:{seconds:02}", font=("Arial", 48))
                     self.time_label.pack()
                     self.running = True
                     self.update_timer()
@@ -148,9 +156,10 @@ class TimerApp:
         self.seconds_entry.pack_forget()
 
 if __name__ == "__main__":
-    root = tk.Tk()
+    root = ThemedTk(theme="arc")
     app = TimerApp(root)
     root.mainloop()
+
 #pyinstaller --onefile --noconsole --add-data "icon.png;." timer.py
 #Icon source 
 #Clock by NicholasJudy456 - uploaded on October 13, 2016, 10:20 pm https://openclipart.org/detail/263940/clock#google_vignette
