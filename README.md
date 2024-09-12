@@ -1,7 +1,9 @@
 # Minimalist Countdown Timer for Linux and Windows
-
-This is a simple countdown timer built using Python and Tkinter. It allows you to set a target time and counts down to zero, providing an alert when the time is up. Executable files for both Linux and Windows are included in the Release. For Linux users, a desktop entry and installation script are provided to make setup easy.
-
+### ![image](https://github.com/user-attachments/assets/2b7267e2-59ff-4625-b155-37d189d02d8a)
+- This is a simple countdown timer built using Python and Tkinter. 
+- It allows you to set a target time and counts down to zero, providing an alert when the time is up.
+- Executable files for both Linux and Windows are included in the Release.
+- For Linux users, a desktop entry and installation script are provided to make setup easy.
 ## How to Run
 
 ### On Linux
@@ -10,6 +12,7 @@ This is a simple countdown timer built using Python and Tkinter. It allows you t
 
 ### On Windows
 1. Run the `SmallTimer.exe` file.
+
 
 ## How to Use
 1. Enter the countdown time.
