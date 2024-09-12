@@ -21,5 +21,5 @@ sed -e "s|Exec=.*|Exec=$INSTALL_DIR/SmallTimer|" \
 if [ -f "$INSTALL_DIR/SmallTimer" ] && [ -f "$DESKTOP_DIR/SmallTimer.desktop" ]; then
     echo "Installation complete. You can now launch SmallTimer from your application menu."
 else
-    echo "Installation failed. Please check your paths and try again."
+    echo "Installation failed. Files could not be copied."
 fi
