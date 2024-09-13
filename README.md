@@ -38,5 +38,5 @@
 
    **For Windows:**
    ```bash
-      pyinstaller --onefile --noconsole --add-data "img/icon.ico;img" --add-data "sounds/end.wav;sounds" SmallTimer.py
+      pyinstaller SmallTimer.spec
    ```
