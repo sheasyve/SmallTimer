@@ -4,24 +4,19 @@ import os
 import tkinter as tk
 from tkinter import messagebox
 import pygame
-pygame.mixer.init()
 import sys
 import platform
 import tkinter.simpledialog as simpledialog
 from ttkthemes import ThemedTk
 from tkinter import ttk
+pygame.mixer.init()
 
 class TimerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("Countdown Timer")
-
-        # Create a Style object
+        self.root.title("SmallTimer")
         self.style = ttk.Style()
-
-        # Configure a style for ttk.Button
         self.style.configure('TButton', font=('Arial', 14))
-
         if platform.system() == "Windows":
             self.icon_path = self.resource_path("img/icon.ico")
             self.root.iconbitmap(self.icon_path)  # Use .ico for Windows
@@ -29,35 +24,27 @@ class TimerApp:
             self.icon_path = self.resource_path("img/icon.png")
             self.icon = tk.PhotoImage(file=self.icon_path)
             self.root.iconphoto(True, self.icon)
-
-        self.hours_var = tk.StringVar(value="00")
-        self.minutes_var = tk.StringVar(value="00")
-        self.seconds_var = tk.StringVar(value="00")
+        self.hours = tk.StringVar(value="00")
+        self.minutes = tk.StringVar(value="00")
+        self.seconds = tk.StringVar(value="00")
         vcmd = (root.register(self.limit_size), '%P')
-
-        self.hours_entry = ttk.Entry(root, textvariable=self.hours_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
-        self.hours_entry.pack(side='left')
-        self.hours_entry.bind("<FocusIn>", self.clear_default)
-
+        self.hours = ttk.Entry(root, textvariable=self.hours, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
+        self.hours.pack(side='left')
+        self.hours.bind("<FocusIn>", self.clear_default)
         self.colon1 = ttk.Label(root, text=":", font=("Arial", 48))
         self.colon1.pack(side='left')
-
-        self.minutes_entry = ttk.Entry(root, textvariable=self.minutes_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
-        self.minutes_entry.pack(side='left')
-        self.minutes_entry.bind("<FocusIn>", self.clear_default)
-
+        self.minutes = ttk.Entry(root, textvariable=self.minutes, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
+        self.minutes.pack(side='left')
+        self.minutes.bind("<FocusIn>", self.clear_default)
         self.colon2 = ttk.Label(root, text=":", font=("Arial", 48))
         self.colon2.pack(side='left')
-
-        self.seconds_entry = ttk.Entry(root, textvariable=self.seconds_var, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
-        self.seconds_entry.pack(side='left')
-        self.seconds_entry.bind("<FocusIn>", self.clear_default)
-
+        self.seconds = ttk.Entry(root, textvariable=self.seconds, font=("Arial", 48), width=2, justify='center', validate='key', validatecommand=vcmd)
+        self.seconds.pack(side='left')
+        self.seconds.bind("<FocusIn>", self.clear_default)
         self.reset_button = ttk.Button(root, text="Reset", command=self.reset_timer)
         self.start_button = ttk.Button(root, text="Start", command=self.start_timer)
         self.reset_button.pack(side="right", fill="y", expand=True)
         self.start_button.pack(side="right",fill="y", expand=True)
-        
         self.sound = pygame.mixer.Sound(self.resource_path('sounds/end.wav'))
         self.time_in_seconds = 0
         self.running = False
@@ -91,7 +78,6 @@ class TimerApp:
                 self.time_in_seconds -= 1
                 hours, remainder = divmod(self.time_in_seconds, 3600)
                 minutes, seconds = divmod(remainder, 60)
-                # Update the label to reflect the time
                 self.time_label.config(text=f"{hours:02}:{minutes:02}:{seconds:02}")
                 self.root.after(1000, self.update_timer)
             else:
@@ -99,7 +85,6 @@ class TimerApp:
                 self.sound_channel = pygame.mixer.Channel(0)
                 self.sound_channel.play(self.sound, loops=-1)
                 self.show_notification()
-
                 # Switch back to entry fields
                 self.time_label.pack_forget()
                 self.pack_time_entries()
@@ -107,9 +92,9 @@ class TimerApp:
     def start_timer(self):
         if not self.running:
             try:
-                hours = int(self.hours_var.get())
-                minutes = int(self.minutes_var.get())
-                seconds = int(self.seconds_var.get())
+                hours = int(self.hours.get())
+                minutes = int(self.minutes.get())
+                seconds = int(self.seconds.get())
                 self.time_in_seconds = hours * 3600 + minutes * 60 + seconds
                 if self.time_in_seconds > 0:
                     self.unpack_time_entries()
@@ -126,34 +111,33 @@ class TimerApp:
     def reset_timer(self):
         self.running = False
         self.time_in_seconds = 0
-        self.hours_entry.unbind("<FocusIn>")
-        self.minutes_entry.unbind("<FocusIn>")
-        self.seconds_entry.unbind("<FocusIn>")
-        self.hours_var.set("00")
-        self.minutes_var.set("00")
-        self.seconds_var.set("00")
-
-        self.hours_entry.bind("<FocusIn>", self.clear_default)
-        self.minutes_entry.bind("<FocusIn>", self.clear_default)
-        self.seconds_entry.bind("<FocusIn>", self.clear_default)
+        self.hours.unbind("<FocusIn>")
+        self.minutes.unbind("<FocusIn>")
+        self.seconds.unbind("<FocusIn>")
+        self.hours.set("00")
+        self.minutes.set("00")
+        self.seconds.set("00")
+        self.hours.bind("<FocusIn>", self.clear_default)
+        self.minutes.bind("<FocusIn>", self.clear_default)
+        self.seconds.bind("<FocusIn>", self.clear_default)
         # Return to entry fields
         if hasattr(self, 'time_label'):
             self.time_label.pack_forget()
             self.pack_time_entries()
 
     def pack_time_entries(self):
-        self.hours_entry.pack(side='left')
+        self.hours.pack(side='left')
         self.colon1.pack(side='left')
-        self.minutes_entry.pack(side='left')
+        self.minutes.pack(side='left')
         self.colon2.pack(side='left')
-        self.seconds_entry.pack(side='left')
+        self.seconds.pack(side='left')
 
     def unpack_time_entries(self):
-        self.hours_entry.pack_forget()
+        self.hours.pack_forget()
         self.colon1.pack_forget()
-        self.minutes_entry.pack_forget()
+        self.minutes.pack_forget()
         self.colon2.pack_forget()
-        self.seconds_entry.pack_forget()
+        self.seconds.pack_forget()
 
 if __name__ == "__main__":
     root = ThemedTk(theme="arc")
