@@ -8,16 +8,13 @@
 
 ### On Linux
 1. Run ```bash chmod +x SmallTimer ```
-1. Run the `SmallTimer` file.
+2. Run the `SmallTimer` file.
 
 ### On Windows
-1. Run the `SmallTimer.exe` file.
-
+-   Run the `SmallTimer.exe` file.
 
 ## How to Use
-1. Enter the countdown time.
-2. Click **Start**.
-3. Click **Restart**.
+-   Download the latest release and follow installation instructions.
 
 ## How to Compile Executables
 ### Dependencies
