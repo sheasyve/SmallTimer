@@ -2,7 +2,7 @@
 
 
 a = Analysis(
-    ['SmallTimer.py'],
+    ['TeenyTinyTimer.py'],
     pathex=[],
     binaries=[],
     datas=[('img/icon.png', 'img'), ('sounds/end.wav', 'sounds')],
@@ -22,7 +22,7 @@ exe = EXE(
     a.binaries,
     a.datas,
     [],
-    name='SmallTimer',
+    name='TeenyTinyTimer',
     debug=False,
     bootloader_ignore_signals=False,
     strip=False,

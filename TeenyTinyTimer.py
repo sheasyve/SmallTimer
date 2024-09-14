@@ -14,7 +14,7 @@ pygame.mixer.init()
 class TimerApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("SmallTimer")
+        self.root.title("TeenyTinyTimer")
         self.style = ttk.Style()
         self.style.configure('TButton', font=('Arial', 14))
         if platform.system() == "Windows":
@@ -144,6 +144,5 @@ if __name__ == "__main__":
     app = TimerApp(root)
     root.mainloop()
 
-#pyinstaller --onefile --noconsole --add-data "icon.png;." timer.py
 #Icon source 
 #Clock by NicholasJudy456 - uploaded on October 13, 2016, 10:20 pm https://openclipart.org/detail/263940/clock#google_vignette
