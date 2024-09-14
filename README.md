@@ -7,11 +7,11 @@
 ## How to Run
 
 ### On Linux
-1. Run ```bash chmod +x SmallTimer ```
-2. Run the `SmallTimer` file.
+1. Run ```bash chmod +x TeenyTinyTimer ```
+2. Run the `TeenyTinyTimer` file.
 
 ### On Windows
--   Run the `SmallTimer.exe` file.
+-   Run the `TeenyTinyTimer.exe` file.
 
 ## How to Use
 -   Download the latest release and follow installation instructions.
@@ -26,14 +26,14 @@
    pip install pyinstaller
    ```
 
-2. Run the following commands in the SmallTimer Folder:
+2. Run the following commands in the TeenyTinyTimer Folder:
 
    **For Linux:**
    ```bash
-      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" SmallTimer.py
+      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" TeenyTinyTimer.py
    ```
 
    **For Windows:**
    ```bash
-      pyinstaller SmallTimer.spec
+      pyinstaller TeenyTinyTimer.spec
    ```
