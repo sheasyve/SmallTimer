@@ -6,14 +6,6 @@
 - It allows you to set a target time and counts down to zero, providing an alert when the time is up.
 - Executable files for both Linux and Windows are included in the Release.
 - For Linux users, a desktop entry and installation script are provided to make setup easy.
-## How to Run
-
-### On Linux
-1. Run ```bash chmod +x TeenyTinyTimer ```
-2. Run the `TeenyTinyTimer` file.
-
-### On Windows
--   Run the `TeenyTinyTimer.exe` file.
 
 ## How to Use
 -   Download the latest release and follow installation instructions.
