@@ -8,7 +8,7 @@
 - For Linux users, a desktop entry and installation script are provided to make setup easy.
 
 # How to Use
--    ### Download the latest release.
+-    ### Download the latest **release**.
 -    ### Follow installation instructions.
 
 ## How to Compile Executables
