@@ -7,17 +7,17 @@
 - Executable files for both Linux and Windows are included in the Release.
 - For Linux users, a desktop entry and installation script are provided to make setup easy.
 
-## How to Use
--   Download the latest release and follow installation instructions.
+# How to Use
+-    ### Download the latest release.
+-    ### Follow installation instructions.
 
 ## How to Compile Executables
-### Dependencies
--   pip install ttkthemes
--   pip install pygame
 
-1. Install PyInstaller:
+1. Install dependencies:
    ```bash
    pip install pyinstaller
+   pip install pygame
+   pip install ttkthemes
    ```
 
 2. Run the following commands in the TeenyTinyTimer Folder:
@@ -31,5 +31,16 @@
    ```bash
       pyinstaller TeenyTinyTimer.spec
    ```
+3. Move TeenyTinyTimer from TeenyTinyTimer/dist to the root folder TeenyTinyTimer.
+     - The dist and build folder can be deleted.
+     
+   **For Windows:**
+      - Move TeenyTinyTimer.exe to where you would like.
+      - Create a shortcut or pin.
 
-<small> <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Freepik - Flaticon</a> </small>
+   **For Linux:**
+      - In the terminal, run ```bash ./install.sh```
+      - TeenyTinyTImer will be added to the applications menu.
+      
+
+ <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Freepik - Flaticon</a> 
