@@ -17,6 +17,7 @@
    ```bash
    pip install pyinstaller
    pip install pygame
+   pip install tk
    pip install ttkthemes
    ```
 
