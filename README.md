@@ -17,7 +17,7 @@
    ```bash
    pip install pyinstaller
    pip install pygame
-   pip install tk
+   sudo apt-get install python3-tk
    pip install ttkthemes
    ```
 
@@ -25,7 +25,7 @@
 
    **For Linux:**
    ```bash
-      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" TeenyTinyTimer.py
+      pyinstaller --onefile --noconsole --paths /usr/lib/python3.10 --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" TeenyTinyTimer.py
    ```
 
    **For Windows:**
