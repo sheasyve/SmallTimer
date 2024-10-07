@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=TeenyTimer
+Comment=TeenyTimer
+Exec=/usr/local/bin/TeenyTimer
+Icon=icon
+Terminal=false
+Type=Application
+Categories=Utility;

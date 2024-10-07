@@ -9,11 +9,11 @@
 ## How to Run
 
 ### On Linux
-1. Run ```bash chmod +x TeenyTinyTimer ```
-2. Run the `TeenyTinyTimer` file.
+1. Run ```bash chmod +x TeenyTimer ```
+2. Run the `TeenyTimer` file.
 
 ### On Windows
--   Run the `TeenyTinyTimer.exe` file.
+-   Run the `TeenyTimer.exe` file.
 
 ## How to Use
 -   Download the latest release and follow installation instructions.
@@ -28,16 +28,16 @@
    pip install pyinstaller
    ```
 
-2. Run the following commands in the TeenyTinyTimer Folder:
+2. Run the following commands in the TeenyTimer Folder:
 
    **For Linux:**
    ```bash
-      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" TeenyTinyTimer.py
+      pyinstaller --onefile --noconsole --add-data "img/icon.png:img" --add-data "sounds/end.wav:sounds" TeenyTimer.py
    ```
 
    **For Windows:**
    ```bash
-      pyinstaller TeenyTinyTimer.spec
+      pyinstaller TeenyTimer.spec
    ```
 
 <small> <a href="https://www.flaticon.com/free-icons/clock" title="clock icons">Clock icons created by Freepik - Flaticon</a> </small>

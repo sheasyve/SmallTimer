@@ -1,5 +1,5 @@
-src/build/
-src/dist/
+build
+dist
 timer
 timer.exe
 SmallTimer
