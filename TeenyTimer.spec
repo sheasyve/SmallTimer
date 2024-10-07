@@ -5,7 +5,7 @@ a = Analysis(
     ['TeenyTimer.py'],
     pathex=['/usr/lib/python3.10'],
     binaries=[],
-    datas=[('img/icon.png', 'img'), ('sounds/end.wav', 'sounds')],
+    datas=[('img/icon.ico', 'img'), ('sounds/end.wav', 'sounds')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},
@@ -35,4 +35,5 @@ exe = EXE(
     target_arch=None,
     codesign_identity=None,
     entitlements_file=None,
+    icon='img/icon.ico'
 )
