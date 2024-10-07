@@ -14,7 +14,7 @@ if [ ! -d "$SOUND_DIR" ]; then
     sudo mkdir -p "$SOUND_DIR"
 fi
 
-sudo cp TeenyTinyTimer "$INSTALL_DIR/"
+sudo cp TeenyTimer "$INSTALL_DIR/"
 sudo cp img/icon.png "$ICON_DIR/teenytimer.png"
 sudo cp sounds/end.wav "$SOUND_DIR/"
 
